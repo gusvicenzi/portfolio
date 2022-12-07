@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './navbar.scss'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
   items: string[]
 }
 export const Navbar: React.FC<Props> = ({ items }) => {
+  const [isCliked, setIsClicked] = useState(false)
   const mountNavItems = () => {
     const completeList = items.map(item => mountItem(item))
     return completeList
@@ -17,12 +21,13 @@ export const Navbar: React.FC<Props> = ({ items }) => {
   }
 
   return (
-    <div id='navbar'>
-      <nav>
-        <ul>
-          {mountNavItems()}
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul className={isCliked ? 'active' : ''}>
+        {mountNavItems()}
+      </ul>
+      <div id="mobile">
+        <FontAwesomeIcon icon={isCliked ? faTimes : faBars} onClick={() => setIsClicked(prevState => !prevState)} style={{ cursor: 'pointer' }} />
+      </div>
+    </nav>
   )
 }

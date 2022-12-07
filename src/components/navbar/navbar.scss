@@ -1,8 +1,58 @@
-#navbar {
+nav {
   width: 100%;
+  padding: 2.5rem 0;
+  font-size: 1.5rem;
+
   ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
+
+    a {
+      color: turquoise;
+      &:hover {
+        color: purple;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+  #mobile {
+    display: none;
+    font-size: 2.5rem;
+    color: turquoise;
+    &:hover {
+      color: purple;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    ul {
+      flex-direction: column;
+      align-items: center;
+
+      position: fixed;
+      top: 5rem;
+      right: -20rem;
+      background-color: #fffb;
+      border-radius: 1rem;
+      padding: 3rem 4rem;
+
+      font-size: 2rem;
+      transition: 0.3s ease-in-out;
+    }
+    #mobile {
+      display: block;
+      right: 2rem;
+      margin-right: 2rem;
+    }
+
+    .active {
+      right: 0rem;
+    }
   }
 }
