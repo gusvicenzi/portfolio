@@ -38,12 +38,16 @@ nav {
       position: fixed;
       top: 5rem;
       right: -20rem;
-      background-color: #fffb;
+      background-color: #fffe;
       border-radius: 1rem;
-      padding: 3rem 4rem;
+      padding: 2rem 4rem;
 
       font-size: 2rem;
       transition: 0.3s ease-in-out;
+
+      li {
+        padding: 0.3rem 0;
+      }
     }
     #mobile {
       display: block;

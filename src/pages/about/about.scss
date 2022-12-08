@@ -1,0 +1,28 @@
+#about {
+  background-color: turquoise;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem 0;
+
+  h1 {
+    color: #fff;
+    font-size: 3rem;
+
+    &:hover {
+      color: purple;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    width: 80%;
+    margin-top: 1rem;
+  }
+}
